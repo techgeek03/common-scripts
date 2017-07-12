@@ -50,4 +50,4 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/[
 # Bash into running container
 dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
-alias dpulla="docker images | grep -v REPOSITORY | awk '{print $1}' | xargs -L1 docker pull"
+docker images | grep -v REPOSITORY | awk '{print $1}' | xargs -L1 docker pull
